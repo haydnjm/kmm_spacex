@@ -3,7 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-android-extensions")
 }
-group = "com.example.kmm_spacex"
+group = "com.jetbrains.handson"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -21,7 +21,7 @@ dependencies {
 android {
     compileSdkVersion(29)
     defaultConfig {
-        applicationId = "com.example.kmm_spacex.androidApp"
+        applicationId = "com.jetbrains.handson.androidApp"
         minSdkVersion(24)
         targetSdkVersion(29)
         versionCode = 1

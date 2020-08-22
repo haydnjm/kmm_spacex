@@ -5,7 +5,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android-extensions")
 }
-group = "com.example.kmm_spacex"
+group = "com.jetbrains.handson"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -31,11 +31,7 @@ kotlin {
                 implementation(kotlin("test-annotations-common"))
             }
         }
-        val androidMain by getting {
-            dependencies {
-                implementation("com.google.android.material:material:1.2.0")
-            }
-        }
+        val androidMain by getting
         val androidTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
