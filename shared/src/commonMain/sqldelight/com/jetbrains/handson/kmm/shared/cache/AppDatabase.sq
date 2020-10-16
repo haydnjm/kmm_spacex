@@ -1,0 +1,52 @@
+---- Create tables
+-- Launch table
+CREATE TABLE Launch(
+flighNumber INTEGER NOT NULL,
+missionName TEXT NOT NULL,
+launchYear INTEGER AS Int NOT NULL DEFAULT 0,
+rocketId TEXT NOT NULL,
+details TEXT,
+launchSuccess INTEGER AS Boolean DEFAULT NULL,
+launchDateUTC TEXT NOT NULL,
+missionPatchUrl TEXT,
+articleUrl TEXT
+);
+
+-- Rocket table
+CREATE TABLE Rocket (
+id TEXT NOT NULL PRIMARY KEY,
+name TEXT NOT NULL,
+type TEXT NOT NULL
+);
+
+---- Create operations
+-- Launch
+insertLaunch:
+INSERT INTO Launch(flighNumber, missionName, launchYear, rocketId, details, launchSuccess, launchDateUTC, missionName, articleUrl)
+VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+-- Rocket
+insertRocket:
+INSERT INTO Rocket(id, name, type)
+VALUES(?, ?, ?);
+
+---- Delete operations
+-- Launch
+removeAllLaunches:
+DELETE FROM Launch;
+
+-- Rocket
+removeAllRockets:
+DELETE FROM Rocket;
+
+---- Read operations
+-- Rocket by id
+selectRocketById:
+SELECT * FROM Rocket
+WHERE id = ?;
+
+-- All launch info
+selectAllLaunchesInfo:
+SELECT Launch.*, Rocket.*
+FROM Launch
+LEFT JOIN Rocket ON Rocket.id == Launch.rocketId;

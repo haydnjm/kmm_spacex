@@ -13,13 +13,8 @@ pluginManagement {
         }
     }
 }
-<<<<<<< HEAD
-rootProject.name = "KMM_SpaceX"
-=======
-rootProject.name = "KMMApp"
->>>>>>> 0028c58... Create project structure
 
+rootProject.name = "KMM_SpaceX"
 
 include(":androidApp")
 include(":shared")
-
